@@ -85,12 +85,16 @@ const produtobeleza = new ProdutoBeleza({
     }
 });
 
-app.get("/", async(req, res)=>{
-    res.sendFile(__dirname +"/produtobeleza.html")
+app.get("/produtobeleza", async(req, res)=>{
+    res.sendFile(__dirname +"/produtobeleza.html");
 })
 
-app.get("/", async(req, res)=>{
+app.get("/cadastrousuario", async(req, res)=>{
     res.sendFile(__dirname +"/cadastrousuario.html");
+})
+
+app.get("/index", async(req, res)=>{
+    res.sendFile(__dirname +"/index.html");
 })
 
 app.listen(port, ()=>{
