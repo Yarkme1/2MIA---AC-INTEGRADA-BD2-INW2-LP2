@@ -52,7 +52,7 @@ const usuario = new Usuario({
 
 try{
     const newUsuario = await usuario.save()
-    res.json({error : null, msg : "Cadastro OK", usuarioId : newusuario._id});
+    res.json({error : null, msg : "Cadastro OK", usuarioId : newUsuario._id});
 } catch(error){
     res.status(400).json({error});
 }
@@ -67,6 +67,12 @@ app.post("/produtobeleza", async(req, res)=>{
 
 if(id_produtobeleza == null || descricao == null || marca == null || data_fabricacao == null || quantidade_estoque == null){
     return res.status(400).json({error : "Preencha todos os campos"})
+}
+
+if (quantidade_estoque > 30) {
+    return res.status(400).json({ error: "A quantidade do estoque alcançou o limite" });
+} else if (quantidade_estoque <= 0) {
+    return res.status(400).json({ error: "O valor digitado é negativo, bote um valor positivo menor ou igual a 30" });
 }
 
 const produtobeleza = new ProdutoBeleza({
@@ -85,12 +91,16 @@ const produtobeleza = new ProdutoBeleza({
     }
 });
 
-app.get("/", async(req, res)=>{
-    res.sendFile(__dirname +"/produtobeleza.html")
+app.get("/produtobeleza", async(req, res)=>{
+    res.sendFile(__dirname +"/produtobeleza.html");
 })
 
-app.get("/", async(req, res)=>{
+app.get("/cadastrousuario", async(req, res)=>{
     res.sendFile(__dirname +"/cadastrousuario.html");
+})
+
+app.get("/index", async(req, res)=>{
+    res.sendFile(__dirname +"/index.html");
 })
 
 app.listen(port, ()=>{

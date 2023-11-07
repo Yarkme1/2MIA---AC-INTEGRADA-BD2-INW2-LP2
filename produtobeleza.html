@@ -3,9 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AC</title>
+    <title>Beautystore</title>
+    <!-- Inclua os links para os arquivos CSS do Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>AC do ED</h1>
+    <!-- Cabeçalho com Logotipo e Barra de Navegação Bootstrap -->
+    <header class="bg-primary text-white p-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 text-left">
+                    <h1 class="mb-0">
+                        <a class="text-white" href="/index">Beautystore</a>
+                        <style>
+                            a.text-white {
+                                text-decoration: none;
+                            }
+                        </style>
+                    </h1>
+                </div>
+                <div class="col-4 text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-handbag-fill" viewBox="0 0 16 16">
+                        <path d="M8 1a2 2 0 0 0-2 2v2H5V3a3 3 0 1 1 6 0v2h-1V3a2 2 0 0 0-2-2zM5 5H3.36a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.355a2.5 2.5 0 0 0 2.473-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5H11v1.5a.5.5 0 0 1-1 0V5H6v1.5a.5.5 0 0 1-1 0V5z"/>
+                      </svg>
+                </div>
+                <div class="col-4 text-right">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="/cadastrousuario">Entrar</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="/produtobeleza">Cadastrar Produtos</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<!-- Formulário de Cadastro de Produtos com Bootstrap -->
+<div class="container mt-5">
+    <h1>Cadastro de Produtos</h1>
+    <form action="/produtobeleza"  method="post">
+        <div class="form-group">
+            <label for="id_produtobeleza">ID do produto:</label>
+            <input type="text" class="form-control" id="id_produtobeleza" name="id_produtobeleza" placeholder="ID do produto">
+        </div>
+        <div class="form-group">
+            <label for="descricao">Descrição:</label>
+            <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição">
+        </div>
+        <div class="form-group">
+            <label for="marca">Marca:</label>
+            <input type="text" class="form-control" id="marca" name="marca" placeholder="Marca">
+        </div>
+        <div class="form-group">
+            <label for="data_fabricacao">Data de Fabricação:</label>
+            <input type="date" class="form-control" id="data_fabricacao" name="data_fabricacao" placeholder="Data de Fabricação">
+        </div>
+        <div class="form-group">
+            <label for="quantidade_estoque">Quantidade no Estoque</label>
+            <input type="number" class="form-control" id="quantidade_estoque" name="quantidade_estoque" placeholder="Quantidade no Estoque">
+        </div>
+        <center><button type="submit" class="btn btn-primary">Cadastrar</button></center>
+    </form>
+</div>
+<br><br><br><br><br><br><br>
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white p-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    &copy; 2023 Beautystore - Todos os direitos reservados
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Inclua os scripts JavaScript do Bootstrap no final do corpo -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
