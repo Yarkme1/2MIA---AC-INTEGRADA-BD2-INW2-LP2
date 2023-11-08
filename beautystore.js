@@ -69,10 +69,10 @@ if(id_produtobeleza == null || descricao == null || marca == null || data_fabric
     return res.status(400).json({error : "Preencha todos os campos"})
 }
 
-if (quantidade_estoque > 30) {
-    return res.status(400).json({ error: "A quantidade do estoque alcançou o limite" });
-} else if (quantidade_estoque <= 0) {
-    return res.status(400).json({ error: "O valor digitado é negativo, bote um valor positivo menor ou igual a 30" });
+if(quantidade_estoque > 30){
+    return res.status(400).json({error: "A quantidade do estoque alcançou o limite"});
+}else if(quantidade_estoque <= 0){
+    return res.status(400).json({error: "O valor digitado é negativo, bote um valor positivo menor ou igual a 30"});
 }
 
 const produtobeleza = new ProdutoBeleza({
